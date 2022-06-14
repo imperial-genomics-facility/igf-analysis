@@ -1,0 +1,17 @@
+{
+    "__default__" :
+    {
+        "ncpus": 1,
+        "mem": 4
+    },
+    "align" :
+    {
+        "ncpus": 24,
+        "mem": 42
+    },
+    "cutadapt_pe":
+    {
+        "ncpus": 8,
+        "mem": 16
+    }
+}
