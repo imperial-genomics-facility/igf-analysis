@@ -1,0 +1,32 @@
+{
+    "__default__" :
+    {
+        "ncpus": 1,
+        "mem": 4
+    },
+    "rseqc_gtf2bed" :
+    {
+        "ncpus": 2,
+        "mem": 16
+    },
+    "star_index" :
+    {
+        "ncpus": 4,
+        "mem": 42
+    },
+    "align" :
+    {
+        "ncpus": 24,
+        "mem": 42
+    },
+    "cutadapt_pe":
+    {
+        "ncpus": 8,
+        "mem": 16
+    },
+    "rseqc_gtf2bed":
+    {
+        "ncpus": 4,
+        "mem": 8
+    }
+}
