@@ -1,0 +1,44 @@
+# path or URL to sample sheet (TSV format, columns: sample, condition, ...)
+samples: /rds/general/project/genomics-facility-archive-2019/ephemeral/IGFQ001345_mitchell_14-2-2022_GlobinDepletion/samples.tsv
+# path or URL to sequencing unit sheet (TSV format, columns: sample, unit, fq1, fq2)
+# Units are technical replicates (e.g. lanes, or resequencing of the same biological
+# sample).
+units: /rds/general/project/genomics-facility-archive-2019/ephemeral/IGFQ001345_mitchell_14-2-2022_GlobinDepletion/units.tsv
+
+
+ref:
+  # Ensembl species name
+  species: homo_sapiens
+  # Ensembl release
+  release: 106
+  # Genome build
+  build: GRCh38
+
+
+trimming:
+  activate: False
+
+mergeReads:
+  activate: False
+
+pca:
+  activate: True
+  labels:
+    # columns of sample sheet to use for PCA
+    - condition
+
+diffexp:
+  # contrasts for the deseq2 results method
+  contrasts:
+    PLACEBO_VISIT_1-vs-PLACEBO_VISIT_2:
+      - PLACEBO_VISIT_2
+      - PLACEBO_VISIT_1
+    CELECOXIB_VISIT_1-vs-CELECOXIB_VISIT_2:
+      - CELECOXIB_VISIT_2
+      - CELECOXIB_VISIT_1
+  model: ~condition
+
+params:
+  cutadapt-pe: ""
+  cutadapt-se: ""
+  star: ""
